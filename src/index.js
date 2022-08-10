@@ -1,5 +1,5 @@
 const { Worker } = require("worker_threads");
-const worker1 = new Worker("./src/workers/clock.js");
+const worker1 = new Worker("../built/workers/clock.js");
 
 worker1.on("error", (err) => {
     console.error(err);

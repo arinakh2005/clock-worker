@@ -1,11 +1,12 @@
 const { parentPort } = require( "worker_threads");
 
-let i = 0;
+let i: number = 0;
 
 setInterval(() => {
-    let currentDate = new Date();
+    let currentDate: Date = new Date();
     parentPort.postMessage(`${currentDate.toLocaleTimeString()}`);
     i++;
+
     if (i > 5) {
         throw new Error('Finished');
     }
